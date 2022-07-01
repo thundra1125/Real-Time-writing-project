@@ -1,118 +1,62 @@
-Contribution: 2021-02-06 20:00
+# ✍️ Write with me
 
-Contribution: 2021-02-06 20:01
+A real-time collaborative blog post editor built with GraphQL, React, React Markdown, & AWS AppSync.
 
-Contribution: 2021-02-06 20:02
+This repo goes along with the medium post "How to Build a Real-time Collaborative Markdown Editor with React Hooks, GraphQL & AWS AppSync". Click [here](https://medium.com/open-graphql/how-to-build-a-real-time-collaborative-markdown-editor-with-react-hooks-graphql-aws-appsync-dc0c121683f4) to check it out.
 
-Contribution: 2021-02-06 20:03
+> Try it out at [www.writewithme.dev](https://www.writewithme.dev/#/)
 
-Contribution: 2021-02-06 20:04
+![](writewithme.gif)
 
-Contribution: 2021-02-06 20:05
+### Base schema
 
-Contribution: 2021-02-06 20:06
+Here's the base schema:
 
-Contribution: 2021-02-06 20:07
+```graphql
+type Post @model {
+  id: ID!
+  clientId: ID!
+  markdown: String!
+  title: String!
+  createdAt: String
+}
+```
 
-Contribution: 2021-02-06 20:08
+We have a `Post` type that has a few properties. The most important property is the markdown. This is where we are keeping up with the state of the post.
 
-Contribution: 2021-02-06 20:09
+We also have a `clientId` to properly handle GraphQL subscriptions on the client.
 
-Contribution: 2021-02-07 20:00
+## Launching the app
 
-Contribution: 2021-02-08 20:00
+Deploy this fullstack app with a single click to the Amplify Console:
 
-Contribution: 2021-02-08 20:01
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/dabit3/write-with-me)
 
-Contribution: 2021-02-08 20:02
 
-Contribution: 2021-02-08 20:03
+### Run locally with the Amplify CLI
 
-Contribution: 2021-02-08 20:04
+1. Clone the repo
 
-Contribution: 2021-02-09 20:00
+```sh
+git clone https://github.com/dabit3/write-with-me.git
+```
 
-Contribution: 2021-02-09 20:01
+2. Change into the directory & install dependencies
 
-Contribution: 2021-02-09 20:02
+```sh
+cd write-with-me
 
-Contribution: 2021-02-09 20:03
+npm install
+```
 
-Contribution: 2021-02-09 20:04
+3. Initialize the Amplify backend
 
-Contribution: 2021-02-09 20:05
+```sh
+amplify init
+```
 
-Contribution: 2021-02-10 20:00
+4. Push the application into your account
 
-Contribution: 2021-02-10 20:01
-
-Contribution: 2021-02-11 20:00
-
-Contribution: 2021-02-11 20:01
-
-Contribution: 2021-02-11 20:02
-
-Contribution: 2021-02-11 20:03
-
-Contribution: 2021-02-11 20:04
-
-Contribution: 2021-02-11 20:05
-
-Contribution: 2021-02-11 20:06
-
-Contribution: 2021-02-11 20:07
-
-Contribution: 2021-02-11 20:08
-
-Contribution: 2021-02-12 20:00
-
-Contribution: 2021-02-12 20:01
-
-Contribution: 2021-02-12 20:02
-
-Contribution: 2021-02-13 20:00
-
-Contribution: 2021-02-13 20:01
-
-Contribution: 2021-02-13 20:02
-
-Contribution: 2021-02-13 20:03
-
-Contribution: 2021-02-13 20:04
-
-Contribution: 2021-02-13 20:05
-
-Contribution: 2021-02-13 20:06
-
-Contribution: 2021-02-13 20:07
-
-Contribution: 2021-02-13 20:08
-
-Contribution: 2021-02-13 20:09
-
-Contribution: 2021-02-13 20:10
-
-Contribution: 2021-02-13 20:11
-
-Contribution: 2021-02-13 20:12
-
-Contribution: 2021-02-14 20:00
-
-Contribution: 2021-02-14 20:01
-
-Contribution: 2021-02-14 20:02
-
-Contribution: 2021-02-14 20:03
-
-Contribution: 2021-02-14 20:04
-
-Contribution: 2021-02-14 20:05
-
-Contribution: 2021-02-14 20:06
-
-Contribution: 2021-02-14 20:07
-
-Contribution: 2021-02-15 20:00
-
-Contribution: 2021-02-15 20:01
-
+```sh
+amplify push
+```
